@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown"
+    android:gravity="center"
+    android:layoutAnimation="@anim/layout_animacija"
+    android:orientation="vertical"
+    tools:context=".Details.View.HotelDetails">
+
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="281dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textFontWeight="700"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/imageView"
+        android:layout_width="369dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="20dp"
+        android:onClick="akcija"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name"
+        fresco:actualImageScaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/Rating"
+        android:layout_width="196dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="374dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rating" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/goldish"
+        android:onClick="openWeb"
+        android:text="@string/contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Description" />
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="177dp"-->
+<!--        android:layout_height="21dp"-->
+<!--        android:entries="@array/spinner"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/Description"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.722"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/Rating"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView"-->
+<!--        app:layout_constraintVertical_bias="0.196" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

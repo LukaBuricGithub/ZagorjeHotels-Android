@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LukaBuricProject</string>
+    <string name="messgae1">Odaberi hotel</string>
+    <string name="rating">Ocjena:</string>
+    <string name="contact">Kontakt</string>
+    <string name="appwidget_text">Do aplikacije</string>
+    <string name="add_widget">Dodaj widget</string>
+    <string name="app_widget_description">Opis widgeta</string>
+</resources>
