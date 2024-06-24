@@ -19,6 +19,7 @@ import hr.tvz.android.lukaburicproject.Details.Presenter.DetailPresenter;
 import hr.tvz.android.lukaburicproject.Main.Model.Hotel;
 import hr.tvz.android.lukaburicproject.Main.View.MainActivity;
 import hr.tvz.android.lukaburicproject.Miscellaneous.MapsActivity;
+import hr.tvz.android.lukaburicproject.Miscellaneous.MediaPlayerSingleton;
 import hr.tvz.android.lukaburicproject.R;
 import hr.tvz.android.lukaburicproject.databinding.ActivityMainBinding;
 import hr.tvz.android.lukaburicproject.databinding.HotelDetailsBinding;
@@ -111,7 +112,15 @@ public class HotelDetails extends AppCompatActivity implements IHotelDetails{
     {
         super.onResume();
         detailPresenter.onResume();
+        MediaPlayerSingleton.getInstance().start();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MediaPlayerSingleton.getInstance().pause();
+    }
+
 
     @Override
     protected void onDestroy()

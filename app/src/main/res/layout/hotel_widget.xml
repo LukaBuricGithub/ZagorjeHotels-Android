@@ -2,7 +2,8 @@
     android:background="@drawable/hotelbackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.LukaBuricProject.AppWidgetContainer">
+    android:theme="@style/Theme.LukaBuricProject.AppWidgetContainer"
+    android:id="@+id/appwidget_layout">
 
     <TextView
         android:id="@+id/appwidget_text"

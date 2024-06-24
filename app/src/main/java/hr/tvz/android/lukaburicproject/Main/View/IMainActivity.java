@@ -10,6 +10,6 @@ import retrofit2.Call;
 
 public interface IMainActivity {
     void Enque(ListView listView, ArrayAdapter<String> adapter, Call<List<Hotel>> slike);
-    void Music();
+    //void Music();
     void color(int position);
 }

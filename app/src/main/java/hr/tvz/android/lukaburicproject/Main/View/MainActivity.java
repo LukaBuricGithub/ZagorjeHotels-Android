@@ -25,6 +25,7 @@ import hr.tvz.android.lukaburicproject.Main.Presenter.MainPresenter;
 import hr.tvz.android.lukaburicproject.Miscellaneous.ServiceGenerator;
 import hr.tvz.android.lukaburicproject.R;
 import hr.tvz.android.lukaburicproject.databinding.ActivityMainBinding;
+import hr.tvz.android.lukaburicproject.Miscellaneous.MediaPlayerSingleton;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         setContentView(view);
-        Music();
+        //Music();
 
 
 
@@ -93,6 +94,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         });
 
         presenter = new MainPresenter(this);
+
+        MediaPlayerSingleton.getInstance().initializeMediaPlayer(this, R.raw.disco);
+
     }
 
 
@@ -141,34 +145,39 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         });
     }
 
+    /*
     @Override
     public void Music() {
         mediaPlayer= MediaPlayer.create(MainActivity.this,R.raw.disco);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
+    */
 
     @Override
     protected void onResume()
     {
         super.onResume();
         presenter.onResume();
-        mediaPlayer.start();
+        MediaPlayerSingleton.getInstance().start();
+        //mediaPlayer.start();
     }
 
     @Override
     protected void onPause()
     {
         super.onPause();
-        mediaPlayer.pause();
+        MediaPlayerSingleton.getInstance().pause();
+        //mediaPlayer.pause();
     }
 
     @Override
     protected void onDestroy()
     {
         super.onDestroy();
-        mediaPlayer.stop();
-        mediaPlayer.release();
+        //mediaPlayer.stop();
+        MediaPlayerSingleton.getInstance().stop();
+        //mediaPlayer.release();
         presenter.onDestroy();
 
     }
